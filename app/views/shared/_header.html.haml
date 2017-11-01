@@ -1,0 +1,21 @@
+%nav{class: 'navbar navbar-default'}
+  .container-fluid
+    .navbar-header
+      %a{class: 'navbar-brand', href: root_path}
+        = 'Ynsta'
+
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{href: '#'}
+            = 'People'
+        %li
+          %a{href: '#'}
+            = 'Travel'
+        %li
+          %a{href: '#'}
+            = 'Food'
+
+      .form{class:'navbar-form navbar-left'}
+        .form-group
+          %input{input: 'text', class:'form-control', placeholder:'Rechercher'}
