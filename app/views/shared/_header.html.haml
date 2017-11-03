@@ -21,7 +21,7 @@
           %input{input: 'text', class:'form-control', placeholder:'Rechercher'}
 
       - if current_user
-        %a{href: '#', class: ' pull-right'}
+        %a{href: '/upload', class: ' pull-right'}
           = 'Uploader une image'
       - else
         %a{href: new_user_registration, class: ' pull-right'}
