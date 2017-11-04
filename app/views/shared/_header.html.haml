@@ -19,3 +19,12 @@
       .form{class:'navbar-form navbar-left'}
         .form-group
           %input{input: 'text', class:'form-control', placeholder:'Rechercher'}
+
+      - if current_user
+        %a{href: '/upload', class: ' pull-right'}
+          = 'Uploader une image'
+      - else
+        %a{href: new_user_registration, class: ' pull-right'}
+          = 'Inscription'
+        %a{href: new_user_session_path, class: ' pull-right'}
+          = 'Connexion'
