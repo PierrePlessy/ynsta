@@ -25,8 +25,9 @@
           %input.form-control{:placeholder => "Search", :type => "text"}/
 
       - if current_user
-        %a{href: '/upload', class: ' pull-right'}
-          = 'Uploader une image'
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{href: '/upload'} Uploader une image
       - else
         %ul.nav.navbar-nav.navbar-right
           %li
