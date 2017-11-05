@@ -28,6 +28,9 @@
         %ul.nav.navbar-nav.navbar-right
           %li
             %a{href: '/upload'} Uploader une image
+          %li
+            %a.fa.fa-sign-out{href: destroy_user_session_path}
+
       - else
         %ul.nav.navbar-nav.navbar-right
           %li

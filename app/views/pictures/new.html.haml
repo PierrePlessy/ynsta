@@ -1,6 +1,6 @@
 .row
   .col-xs-8.col-xs-offset-2
-    %h2= 'Uploder une image'
+    %h3= 'Uploder une image'
 -# - if @listing.errors.any?
 -#   .row
 -#     .col-xs-8.col-xs-offset-2.errors
@@ -11,7 +11,7 @@
 -#         - @listing.errors.full_messages.each do |msg|
 -#           %li= msg
 .row
-  .col-xs-8.col-xs-offset-2.well
+  .col-xs-8.col-xs-offset-2
     = form_for @picture, class: 'form', html: {multipart: true} do |f|
       .form-group
         = f.label :id_category, class: 'form-label required'
@@ -25,4 +25,4 @@
 
       .form-group
         -# %span= t('required_field')
-        = f.submit 'add l\'image', class: 'btn btn-primary pull-right'
+        = f.submit "Publier la photo", class: 'btn btn-primary pull-right'
