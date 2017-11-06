@@ -8,4 +8,7 @@
           %h3
             = picture.user.first_name
           %p
-            = 'travel, food'
+            - @tags.each do |tag|
+              - if tag.picture.id == picture.id
+                %a{href: tag_path(tag.tag.id)} 
+                  = tag.tag.name
