@@ -11,12 +11,25 @@
         = 'Ynsta'
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{:href => category_path(1)} People
-        %li
-          %a{:href => category_path(2)} Travel
-        %li
-          %a{:href => category_path(3)} Food
+        - if params[:id] == '1'
+          %li.active
+            %a{:href => category_path(1)} People
+        - else
+          %li
+            %a{:href => category_path(1)} People
+        - if params[:id] == '2'
+          %li.active
+            %a{:href => category_path(2)} Travel
+        - else
+          %li
+            %a{:href => category_path(2)} Travel
+        - if params[:id] == '3'
+          %li.active
+            %a{:href => category_path(3)} Food
+        - else
+          %li
+            %a{:href => category_path(3)} Food
+
 
       %form.navbar-form.navbar-left{:role => "search"}
         .form-group
