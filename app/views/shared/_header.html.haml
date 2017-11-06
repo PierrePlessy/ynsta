@@ -29,6 +29,9 @@
           %li
             %a{href: '/upload'} Uploader une image
           %li
+            %a{style: 'font-weight: bold'}
+              = current_user.email
+          %li
             %a.fa.fa-sign-out{href: destroy_user_session_path}
 
       - else
