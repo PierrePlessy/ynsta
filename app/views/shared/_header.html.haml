@@ -12,13 +12,11 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li.active
-          %a{:href => "#"}
-            People
-            %span.sr-only (current)
+          %a{:href => category_path(1)} People
         %li
-          %a{:href => "#"} Travel
+          %a{:href => category_path(2)} Travel
         %li
-          %a{:href => "#"} Food
+          %a{:href => category_path(3)} Food
 
       %form.navbar-form.navbar-left{:role => "search"}
         .form-group

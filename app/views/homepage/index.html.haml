@@ -1,11 +1,1 @@
-.row
-  - @pictures.each do |picture|
-    .col-xs-12.col-md-4
-      .picture-container
-        .picture
-          = image_tag picture.image, class: 'img-responsive'
-        .picture-footer
-          %h3
-            = picture.user.first_name
-          %p
-            = 'travel, food'
+= render partial: '/shared/show-pictures'
