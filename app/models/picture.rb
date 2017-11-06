@@ -10,8 +10,8 @@ class Picture < ApplicationRecord
     Picture.joins(:tag_pictures).where(['tag_pictures.tag_id = ?', tag_id])
   end
 
-  def self.findByUser(args)
-    Picture.where('user_id LIKE :query', query: "%#{args[:keywords]}%")
+  def self.find_by_user(slug)
+    Picture.where(['user_id = ?', slug.to_i])
   end
 
   def self.find_by_category(category_id)

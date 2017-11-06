@@ -15,7 +15,7 @@ class PicturesController < ApplicationController
       redirect_to '/'
     else
       # raise @picture.errors.inspect
-      render template: '/upload'
+      render template: uplaod_path
     end
   end
 

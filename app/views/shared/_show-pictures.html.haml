@@ -1,0 +1,18 @@
+.row
+  - @pictures.each do |picture|
+    .col-xs-12.col-md-4
+      .picture-container
+        .picture
+          = image_tag picture.image, class: 'img-responsive'
+        .picture-footer
+          -# %i.fa.fa-heart-o.heart.empty-heart
+          -# %i.fa.fa-heart.heart.full-heart
+          %div
+            %h3
+              %a{href: users_path("#{picture.user.id}-#{picture.user.first_name.parameterize}")}
+                = "By " + picture.user.first_name + " " + picture.user.last_name
+            %p
+              - Tag.all.each do |tag|
+                - if picture.tags.pluck(:id).include?(tag.id)
+                  %a.tag-name{href: tag_path(tag.id)}
+                    = tag.name

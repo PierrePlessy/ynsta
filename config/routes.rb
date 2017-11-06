@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :tags
 
-  get 'upload' => 'pictures#new'
+  get '/upload', to: 'pictures#new', as: 'upload'
+  get '/users/:slug', to: 'users#show', as: 'users'
+  get '/users/', to: 'users#index', as: 'user'
 end
