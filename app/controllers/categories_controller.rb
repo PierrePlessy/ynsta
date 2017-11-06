@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
 
   def index
-    @pictures = Picture.findByCategories(params[:id])
+    @pictures = Picture.all
   end
 
   def show
-    @pictures = Picture.findByCategories(params[:id])
+    @pictures = Picture.find_by_category(params[:id])
     @tags = []
     @pictures.each do |picture|
       tag = TagPicture.findByPictures(picture.id)

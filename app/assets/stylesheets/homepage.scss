@@ -45,3 +45,15 @@ body {
     font-weight: lighter;
   }
 }
+
+.tag-name {
+  text-decoration: none;
+  color: #fff;
+  text-decoration: underline;
+  opacity: .8;
+
+  &:hover {
+    color: #fff;
+    opacity: 1;
+  }
+}
