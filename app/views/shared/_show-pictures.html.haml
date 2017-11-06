@@ -6,6 +6,6 @@
           = image_tag picture.image, class: 'img-responsive'
         .picture-footer
           %h3
-            = picture.user.first_name
+            = " Posted by " + picture.user.first_name + " " + picture.user.last_name
           %p
             = 'travel, food'
