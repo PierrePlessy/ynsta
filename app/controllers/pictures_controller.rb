@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.search()
+    # @pictures = Picture.search()
   end
 
   def new
@@ -11,9 +11,11 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
 
+
     if @picture.save
       redirect_to '/'
     else
+      # raise @picture.errors.inspect
       render template: '/upload'
     end
   end
@@ -21,8 +23,8 @@ class PicturesController < ApplicationController
 
 
 private
-  def listing_params
-    params.required(:picture).permit(:id_category, :image).merge(id_user: current_user.id)
+  def picture_params
+    params.required(:picture).permit(:category_id, :image).merge(user_id: current_user.id)
   end
 
 end
