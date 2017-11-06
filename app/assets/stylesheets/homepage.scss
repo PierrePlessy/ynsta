@@ -31,19 +31,38 @@ body {
   padding-left: 10px;
   padding-top: 10px;
 
-  h3 {
-    margin: 0;
+  .heart {
 
-    color: white;
-    font-size: 15px;
-
+    float: left;
+    font-size: 30px;
+    margin-right: 10px;
   }
 
-  p {
+  .empty-heart {
     color: white;
-    font-size: 10px;
-    font-weight: lighter;
   }
+
+  .full-heart {
+    color: red;
+  }
+
+
+  div {
+    h3 {
+      margin: 0;
+
+      color: white;
+      font-size: 15px;
+
+    }
+
+    p {
+      color: white;
+      font-size: 10px;
+      font-weight: lighter;
+    }
+  }
+
 }
 
 .tag-name {
