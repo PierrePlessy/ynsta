@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   def index
-    # @pictures = Picture.search()
+    @pictures = Picture.all
   end
 
   def new
@@ -15,7 +15,6 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to '/'
     else
-      # raise @picture.errors.inspect
       render template: '/upload'
     end
   end
