@@ -1,0 +1,6 @@
+.form-group
+  = form_for @tag_picture, class: 'form', html: {multipart: true} do |t|
+    - @tags.each do |tag|
+      .form-group
+        = t.label :tag_id, class: 'form-label required'
+        = t.check_box :tag_id, tag, :id, :name , class: 'form-control'
