@@ -7,11 +7,11 @@ class Picture < ApplicationRecord
   has_many :tags, through: :tag_pictures
 
   def self.findByUser(args)
-    Message.where('id_user LIKE :query', query: "%#{args[:keywords]}%")
+    Picture.where('user_id LIKE :query', query: "%#{args[:keywords]}%")
   end
 
   def self.findByCategories(args)
-    Message.where('id_category LIKE :query', query: "%#{args[:keywords]}%")
+    Picture.where('category_id LIKE :query', query: args)
   end
 
 end
