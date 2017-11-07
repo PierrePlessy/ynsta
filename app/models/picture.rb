@@ -7,6 +7,8 @@ class Picture < ApplicationRecord
   has_many :tag_pictures
   has_many :tags, through: :tag_pictures
 
+    validates_presence_of :image
+
   def self.search(args)
     if args[:keywords]
       if args[:keywords].first == '#'
