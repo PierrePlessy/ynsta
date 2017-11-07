@@ -3,11 +3,15 @@ class FavorisController < ApplicationController
   end
 
   def create
-      @favori = Favori.new(favoris_params)
+    @favori = Favori.create!(favoris_params)
+  end
+
+  def destroy
+    @favori = Favori.delete(params[:id])
   end
 
   private
     def favoris_params
-      params.required(:picture_id).merge(user_id: current_user.id)
+      params.permit(:picture_id).merge(user_id: current_user.id)
     end
 end

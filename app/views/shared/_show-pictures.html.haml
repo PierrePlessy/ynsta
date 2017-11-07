@@ -9,9 +9,9 @@
             - if current_user
               - if ![Favori.find_by_picture_id(picture.id)].empty?
                 - if Favori.where(:picture_id=>picture.id).pluck(:user_id).include?(current_user.id)
-                  %a.fa.fa-heart.heart.full-heart
+                  %a.fa.fa-heart.heart.full-heart{data: {do: 'unlike', id: Favori.where(:picture_id=>picture.id, :user_id=>current_user.id).pluck(:id).first}}
                 - else
-                  %a.fa.fa-heart-o.heart.empty-heart{href: favoris_path(picture.id)}
+                  %a.fa.fa-heart-o.heart.empty-heart{data: {do: 'like', picture: picture.id}}
             - else
               %i.fa.fa-heart-o.heart.empty-heart
             %h3
