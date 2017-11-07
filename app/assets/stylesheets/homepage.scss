@@ -49,6 +49,11 @@ body {
       float: left;
       font-size: 30px;
       margin-right: 10px;
+
+      &:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
 
     .empty-heart {
