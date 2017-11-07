@@ -32,8 +32,10 @@
 
 
       %form.navbar-form.navbar-left{:role => "search"}
-        .form-group
-          %input.form-control{:placeholder => "Search", :type => "text"}/
+        = form_tag pictures_path, method: :get, class:'form form-hroizontal'  do
+          .form-group
+            .col-xs-10
+              = text_field_tag 'keywords', nil, class: 'form-control', placeholder: "search"
 
       - if current_user
         %ul.nav.navbar-nav.navbar-right

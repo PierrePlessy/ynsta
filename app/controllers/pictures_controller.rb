@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.search(params)
   end
 
   def new
