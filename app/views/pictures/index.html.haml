@@ -1,1 +1,19 @@
+- if params[:category_id]
+  %h2.fa.fa-folder-open.category-title
+    = @pictures.first.category.name
+  .tag-header
+- elsif params[:tag_id]
+  - Tag.all.each do |tag|
+    - if params[:tag_id].to_i == tag.id
+      %h2
+        = "#" + tag.name.downcase
+      .tag-header
+- elsif params[:slug]
+  .user-header
+    %div.fa.fa-user-circle-o
+    %h2.user-title
+      = @pictures.first.user.first_name + " " + @pictures.first.user.last_name
+
+
+
 = render partial: '/shared/show-pictures', locals: {pictures: @pictures}

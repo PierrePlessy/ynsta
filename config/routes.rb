@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   root 'pictures#index'
   resources :pictures
-  resources :categories
-  resources :tags
+  get 'categories/:category_id', to: 'pictures#index', as: 'category'
+  get 'tags/:tag_id', to: 'pictures#index', as: 'tag'
+  get 'users/:slug', to: 'pictures#index', as: 'user'
+
   resources :favoris
 
   get '/upload', to: 'pictures#new', as: 'upload'
-  get '/users/:slug', to: 'users#show', as: 'users'
-  get '/users/', to: 'users#index', as: 'user'
+  #get '/users/:slug', to: 'users#show', as: 'users'
+  #get '/users/', to: 'users#index', as: 'user'
 end

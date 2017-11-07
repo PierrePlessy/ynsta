@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :picture
+  has_many :pictures
   validates_presence_of :name
 end

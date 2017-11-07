@@ -14,21 +14,16 @@ class Picture < ApplicationRecord
       else
         Picture.joins(:user).where('users.first_name  LIKE :query', query: "%#{args[:keywords]}%")
       end
+    elsif args[:category_id]
+      Picture.where(['category_id = ?', args[:category_id]])
+    elsif args[:tag_id]
+      Picture.joins(:tag_pictures).where(['tag_pictures.tag_id = ?', args[:tag_id]])
+    elsif args[:slug]
+      Picture.where(['user_id = ?', args[:slug].to_i])
     else
       Picture.all
     end
   end
 
-  def self.find_by_tag(tag_id)
-    Picture.joins(:tag_pictures).where(['tag_pictures.tag_id = ?', tag_id])
-  end
-
-  def self.find_by_user(slug)
-    Picture.where(['user_id = ?', slug.to_i])
-  end
-
-  def self.find_by_category(category_id)
-    Picture.where(['category_id = ?', category_id])
-  end
 
 end
