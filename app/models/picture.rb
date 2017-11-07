@@ -3,6 +3,7 @@ class Picture < ApplicationRecord
 
   belongs_to :category
   belongs_to :user
+  belongs_to :favoris
   has_many :tag_pictures
   has_many :tags, through: :tag_pictures
 

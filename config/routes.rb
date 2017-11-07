@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :pictures
   resources :categories
   resources :tags
+  resources :favoris
 
   get '/upload', to: 'pictures#new', as: 'upload'
   get '/users/:slug', to: 'users#show', as: 'users'

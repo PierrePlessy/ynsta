@@ -5,9 +5,16 @@
         .picture
           = image_tag picture.image, class: 'img-responsive'
         .picture-footer
-          %i.fa.fa-heart-o.heart.empty-heart
-          -# %i.fa.fa-heart.heart.full-heart
-          %div
+          .picture-like
+            - if current_user
+              - if ![Favori.find_by_picture_id(picture.id)].empty?
+                - if Favori.where(:picture_id=>picture.id).pluck(:user_id).include?(current_user.id)
+                  %i.fa.fa-heart.heart.full-heart
+                - else
+                  %i.fa.fa-heart-o.heart.empty-heart
+            %h3
+              = Favori.where(:picture_id=>picture.id).count
+          .picture-description
             %h3
               %a{href: users_path("#{picture.user.id}-#{picture.user.first_name.parameterize}")}
                 = "By " + picture.user.first_name + " " + picture.user.last_name
