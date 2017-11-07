@@ -1,11 +1,11 @@
 .row
-  - @pictures.each do |picture|
+  - pictures.each do |picture|
     .col-xs-12.col-md-4
       .picture-container
         .picture
           = image_tag picture.image, class: 'img-responsive'
         .picture-footer
-          -# %i.fa.fa-heart-o.heart.empty-heart
+          %i.fa.fa-heart-o.heart.empty-heart
           -# %i.fa.fa-heart.heart.full-heart
           %div
             %h3

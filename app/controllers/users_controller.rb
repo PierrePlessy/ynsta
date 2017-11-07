@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @pictures = Picture.find_by_user(params[:slug])
+    @user = User.find(params[:slug].to_i)
+    #@pictures = Picture.find_by_user(params[:slug])
   end
 
 end

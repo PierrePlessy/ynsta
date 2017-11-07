@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # before_action :authenticate_user!
+  has_many :pictures
 end

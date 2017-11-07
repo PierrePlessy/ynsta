@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
     @pictures.each do |picture|
       tag = TagPicture.findByPictures(picture.id)
       @tags += tag
+    @category = Category.find_by_id(params[:id])
     end
 
   end

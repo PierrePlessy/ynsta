@@ -1,1 +1,5 @@
-= render partial: '/shared/show-pictures'
+%h2.fa.fa-folder-open.category-title
+      = @category.name
+.tag-header
+
+= render partial: '/shared/show-pictures', locals: {pictures: @pictures}

@@ -1,1 +1,7 @@
-= render partial: '/shared/show-pictures'
+.user-header
+  %div.fa.fa-user-circle-o
+  %h2.user-title
+    = @user.first_name + " " + @user.last_name
+
+
+= render partial: '/shared/show-pictures', locals: {pictures: @user.pictures}
