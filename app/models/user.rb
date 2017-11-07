@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
   # before_action :authenticate_user!
   has_many :pictures
-
-  belongs_to :favoris
+  has_many :favoris
 end
